@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var player1LB: UILabel!
     @IBOutlet weak var player2LB: UILabel!
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var score1: UILabel!
     @IBOutlet weak var score2: UILabel!
     @IBOutlet weak var turnLb: UILabel!
@@ -82,8 +83,9 @@ class ViewController: UIViewController {
                 }
             }
             
+           
             func checkForVictory(_ s :String) -> Bool
-            {
+              {
                 // Horizontal Victory
                 if thisSymbol(a1, s) && thisSymbol(a2, s) && thisSymbol(a3, s)
                 {
@@ -97,6 +99,7 @@ class ViewController: UIViewController {
                 {
                     return true
                 }
+                
                 
                 // Vertical Victory
                 if thisSymbol(a1, s) && thisSymbol(b1, s) && thisSymbol(c1, s)
@@ -124,6 +127,7 @@ class ViewController: UIViewController {
                 
                 return false
             }
+    
             
             func thisSymbol(_ button: UIButton, _ symbol: String) -> Bool
             {
@@ -140,6 +144,7 @@ class ViewController: UIViewController {
                 self.present(ac, animated: true)
             }
             
+    
             func resetBoard()
             {
                 for button in board
